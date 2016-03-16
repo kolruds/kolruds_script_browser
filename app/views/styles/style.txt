@@ -1,0 +1,140 @@
+QLabel {
+  color: rgb(238, 238, 238);
+  font: 8pt "Open Sans";
+}
+QLineEdit {
+	background-color: rgb(50, 50, 50);
+	border:1px solid rgb(85, 85, 85);
+	border-radius: 1px;
+	color:rgb(200, 200, 200);
+	font: 8pt "Open Sans";
+}
+QLineEdit:focus {
+	border: 1px solid rgb(28,188,144)
+}
+QComboBox {
+	image: url(:/combobox/arrow.png);
+	color: rgb(238,238,238);
+	border: 1px solid rgb(85,85,85);
+	height:20px;
+}
+QComboBox::drop-down {
+	top: 8px;
+	right: 6px;
+	border: none;
+	image: url(:/checkbox/images/combobox/arrow.png);
+	subcontrol-origin: padding;
+    subcontrol-position: top right;
+}
+QComboBox QAbstractItemView {
+	color: rgb(50,50,50);
+	color:rgb(200,200,200);
+	selection-background-color: rgb(28,188,144);
+	border:1px solid rgb(30,30,30);
+	font-family: Verdana 11pt;
+}
+QPushButton {
+	background-color: rgb(50, 50, 50);
+	color: rgb(238, 238, 238);
+	border:1px solid rgb(85, 85, 85);
+	border-radius:1px;
+	font: 8pt "Open Sans";
+height: 18px
+}
+QPushButton:pressed {
+	background-color: rgb(72, 72, 72);
+	border:1px solid rgb(28,188,144);
+}
+QSidebar {
+	color: white;
+}
+QSplitter > QFrame {
+	border: 1px solid rgb(30, 30, 30);
+}
+QWidget {
+	background-color: rgb(50, 50, 50);
+}
+QTreeView, QListView {
+	color: rgb(82, 142, 237);
+	alternate-background-color: rgb(55, 55, 55);
+	font: 8pt "Open Sans Semibold";
+	border:1px solid rgb(85, 85, 85);
+}
+QWidget#treeView, QWidget#listView{
+	border: 0px;
+	padding: 0px;
+}
+QWidget#treeView::item, QWidget#listView::item{
+	border-bottom: 0px;
+	padding: 0px;
+}
+QWidget#treeView::item:selected, QWidget#listView::item:selected {
+	border: 0px;
+}
+QHeaderView::section {
+	background-color: rgb(50, 50, 50);
+	font: 8pt "Open Sans Semibold";
+	color: rgb(230, 230, 230);
+	border: 1px solid rgb(30, 30, 30);
+	border-top: 0px;
+	padding-left: 5px;
+}
+QTreeView::item, QListView::item {
+	height: 24px;
+	border-bottom:1px solid rgb(85, 85, 85);
+}
+QTreeView::item:selected, QListView::item:selected {
+	background-color: rgb(70, 70, 70);
+	border:1px solid rgb(28,188,144);
+}
+QTreeView::item:selected:active, QListView::item:selected:active {
+	background-color: rgb(70, 70, 70);
+}
+QTreeView::item:selected:!active, QListView::item:selected:!active {
+	background-color: rgb(70, 70, 70);
+}
+QTreeView::item:hover, QListView::item:hover {
+	background-color: rgb(72, 72, 72);
+}
+QTabWidget::tab-bar {
+	
+}
+QTabBar::tab {
+	
+}
+QTabBar::tab:selected {
+	background-color: rgb(85, 85, 85);
+	color: rgb(238, 238, 238);
+	margin-right: -2px;
+	margin-left: -2px;
+}
+QTabBar::tab:!selected {
+	background-color: rgb(50, 50, 50);
+	border: 1px solid rgb(85, 85, 85);
+}
+QTabBar::tab:hover {
+	border: 1px solid rgb(28,188,144);
+}
+QTabBar::tab:selected:hover {
+	border: 0px;
+}
+QTabBar:tab:first {
+	left: 2px;
+}
+QMenu {
+	color: rgb(230, 230, 230);
+}
+QMenu:item:selected {
+	background-color: rgb(85, 85, 85);
+	border: 1px solid rgb(28,188,144);
+}
+QMenu:item:disabled {
+	color: rgb(70, 70, 70);
+	border: 0px;
+}
+QMenu:separator {
+	height:1px;
+	background: rgb(40, 40, 40);
+	margin-top: 4px;
+	margin-bottom: 4px;
+}

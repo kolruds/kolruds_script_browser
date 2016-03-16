@@ -1,0 +1,4 @@
+{
+    "mcg_repo": "", 
+    "mxs_repo": ""
+}
