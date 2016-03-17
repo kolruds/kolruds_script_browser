@@ -2,7 +2,7 @@ import os
 
 from PySide import QtCore, QtGui
 
-from gen.kolruds_script_browser import kolruds_script_browser
+from gen.ui_kolruds_script_browser import Ui_kolruds_script_browser
 import scripts_tree_view; reload(scripts_tree_view)
 from scripts_tree_view import Scripts_Tree
 
@@ -30,7 +30,7 @@ class MainView(QtGui.QWidget):
 
 	def build_ui(self):
 		# Load and build UI
-		self.ui = kolruds_script_browser()
+		self.ui = Ui_kolruds_script_browser()
 		self.ui.setupUi(self)
 
 		# Apply stylesheet

@@ -9,7 +9,7 @@
 
 from PySide import QtCore, QtGui
 
-class kolruds_script_browser(object):
+class Ui_kolruds_script_browser(object):
     def setupUi(self, kolruds_script_browser):
         kolruds_script_browser.setObjectName("kolruds_script_browser")
         kolruds_script_browser.resize(524, 326)
