@@ -1,3 +1,5 @@
+import os
+
 from PySide import QtGui, QtCore
 
 class Scripts_Tree(QtGui.QTreeView):
@@ -12,7 +14,17 @@ class Scripts_Tree(QtGui.QTreeView):
 		self.header().setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
 		self.header().customContextMenuRequested.connect(self.header_menu)
 		self.addMenuActions()
-		#self.menus = self.create_menus()
+		self.create_icon()
+
+	def create_icon(self):
+		_check_icon = os.path.join(os.path.dirname(__file__), 'icons',
+			'checkBox_normal_checked.png')
+		_unchecked_icon = os.path.join(os.path.dirname(__file__), 'icons',
+			'checkBox_normal_unchecked.png')
+		self.check_icon = QtGui.QIcon()
+		self.check_icon.addPixmap(_check_icon, QtGui.QIcon.Normal, QtGui.QIcon.On)
+		self.check_icon.addPixmap(_unchecked_icon, QtGui.QIcon.Normal, QtGui.QIcon.Off)
+
 
 	def addMenuActions(self):
 		self.run = QtGui.QAction(self)
@@ -38,13 +50,9 @@ class Scripts_Tree(QtGui.QTreeView):
 			item = QtGui.QAction(i, self)
 			item.setCheckable(True)
 			item.setChecked(True)
-			#item.toggled.connect(self.header_menu_item_clicked)
+			item.setIcon(self.check_icon)
 			self.menu.addAction(item)
 		return self.menu
-
-	def header_menu_item_clicked(self, toggle):
-		#print toggle
-		pass
 
 	def header_menu(self, pos):
 		logical_index = self.header().logicalIndexAt(pos)
@@ -54,12 +62,9 @@ class Scripts_Tree(QtGui.QTreeView):
 		global_pos = self.mapToGlobal(logical_pos)
 
 		if not logical_index == 1:
-			""""""
 			menu = self.menus[logical_index]
-			#menu = self.create_menu(logical_index)
 			menu.setMinimumWidth(self.header().sectionSize(logical_index))
 			menu_click = menu.exec_(self.mapToGlobal(logical_pos))
-			#print menu_click.text()
 			if menu_click:
 				self.hide_row_by_value(logical_index, menu_click.text(), menu_click.isChecked())
 
