@@ -4,11 +4,13 @@ class MainController(object):
 
 	def c_browse_mxs_repo(self, dialog):
 		directory = dialog.run()
-		self.model.user_settings.mxs_repo = directory
+		if directory:
+			self.model.user_settings.mxs_repo = directory
 
 	def c_browse_mcg_repo(self, dialog):
 		directory = dialog.run()
-		self.model.user_settings.mcg_repo = directory
+		if directory:
+			self.model.user_settings.mcg_repo = directory
 
 	def c_publish_mxs(self):
 		print 'Button publish_mxs pressed'
