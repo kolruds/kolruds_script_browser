@@ -41,12 +41,12 @@ class Tree_Model(BaseModel):
 			return
 
 		for script in self.scripts:
+			name = QtGui.QStandardItem(script)
+			author = QtGui.QStandardItem(self.scripts[script]['author'])
+			category = QtGui.QStandardItem(self.scripts[script]['category'])
+			version = QtGui.QStandardItem(str(self.scripts[script]['version']))
 			file_ext = os.path.splitext(self.scripts[script]['filename'])[1]
 			filetype = QtGui.QStandardItem(self.icon_switch(file_ext), '')
-			name = QtGui.QStandardItem(script)
-			category = QtGui.QStandardItem(self.scripts[script]['category'])
-			author = QtGui.QStandardItem(self.scripts[script]['author'])
-			version = QtGui.QStandardItem(str(self.scripts[script]['version']))
 
 			item = self.q_model.appendRow([filetype, name, category, author, version])
 

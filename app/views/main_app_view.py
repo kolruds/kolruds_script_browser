@@ -73,7 +73,7 @@ class MainView(QtGui.QWidget):
 		from get_open_directory import Open_Directory_Dialog
 		dialog = Open_Directory_Dialog()
 		dialog.setStyleSheet(self._style)
-		self.ctrl.c_browse_mxs_repo(dialog)
+		self.ctrl.c_browse_mxs_repo(dialog.run())
 
 	def mxs_repo_changed(self):
 		self.ui.lne_mxs_repo_path.setText(self.model.user_settings.mxs_repo)
@@ -83,7 +83,7 @@ class MainView(QtGui.QWidget):
 		from get_open_directory import Open_Directory_Dialog
 		dialog = Open_Directory_Dialog()
 		dialog.setStyleSheet(self._style)
-		self.ctrl.c_browse_mcg_repo(dialog)
+		self.ctrl.c_browse_mcg_repo(dialog.run())
 
 	def mcg_repo_changed(self):
 		self.ui.lne_mcg_repo_path.setText(self.model.user_settings.mcg_repo)
@@ -94,7 +94,7 @@ class MainView(QtGui.QWidget):
 		from get_open_file import Open_File_Dialog
 		dialog = Open_File_Dialog('MaxScript (*.ms *.mcr)')
 		dialog.setStyleSheet(self._style)
-		self.ctrl.c_publish_mxs(dialog)
+		self.ctrl.c_publish_mxs(dialog.run())
 
 	def publish_mcg(self):
 		self.ctrl.c_publish_mcg(dialog)
